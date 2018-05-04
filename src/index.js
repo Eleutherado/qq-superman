@@ -48,6 +48,8 @@ class App extends Component {
 
   handleStartSubmit(selectedQuestion) {
     this.setState({ selectedQuestion });
+    console.log('(App) selectedQuestion: ' + selectedQuestion);
+    console.log('(App) state.selectedQuestion: ' + this.state.selectedQuestion);
   }
   render() {
     //TODO display scroller for video :)
@@ -58,7 +60,7 @@ class App extends Component {
           onFormSubmit={this.handleStartSubmit}
           questions={this.state.votedQuestions}
         />
-        <div className="player_container">
+        <div className="embed-responsive player_container">
           <ReactPlayer
             url="https://youtu.be/4qBFSk7tMDw"
             playing={this.state.playing}

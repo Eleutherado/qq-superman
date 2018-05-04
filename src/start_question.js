@@ -31,7 +31,7 @@ export default class StartQuestionForm extends Component {
       chosenQs = this.state.addQsText;
     }
     console.log('selected question: ' + this.state.selectedQuestion);
-    alert('you chose ' + chosenQs);
+    alert('you chose ' + chosenQs); // update to display on left side of video.
     this.props.onFormSubmit(chosenQs);
     this.setState({ submitted: true });
   }
@@ -46,12 +46,13 @@ export default class StartQuestionForm extends Component {
       return <div />;
     }
     return (
-      <div className="start_form">
+      <div className="start_form containter">
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>
               Pick a question you want this video to answer today:
               <select
+                class="form-control"
                 value={this.state.dropdownValue}
                 onChange={change => {
                   console.log('event: ' + change.target.value);
