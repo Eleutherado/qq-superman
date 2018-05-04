@@ -2,7 +2,7 @@
   "name": "qq-superman",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://eleutherado.github.io/qq-superman-app/",
+  "homepage": "https://eleutherado.github.io/qq-superman/",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "react": "^16.3.2",
@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d docs",
     "eject": "react-scripts eject"
   }
 }
