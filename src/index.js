@@ -26,6 +26,7 @@ class App extends Component {
     this.onProgress = this.onProgress.bind(this);
     this.onPlay = this.onPlay.bind(this);
     this.onPause = this.onPause.bind(this);
+    this.handleStartSubmit = this.handleStartSubmit.bind(this);
   }
 
   onProgress(state) {
@@ -44,18 +45,22 @@ class App extends Component {
   onPause() {
     this.setState({ playing: false });
   }
+
+  handleStartSubmit(selectedQuestion) {
+    this.setState({ selectedQuestion });
+  }
   render() {
     //TODO display scroller for video :)
     return (
       <div className="app">
         <Header />
         <SelectQuestion
-          onSubmit={this.handleStartSubmit}
+          onFormSubmit={this.handleStartSubmit}
           questions={this.state.votedQuestions}
         />
         <div className="player_container">
           <ReactPlayer
-            url="https://www.youtube.com/watch?v=Rm83Q9UhJvw"
+            url="https://youtu.be/4qBFSk7tMDw"
             playing={this.state.playing}
             onPlay={this.onPlay}
             onPause={this.onPause}
