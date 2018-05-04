@@ -35,6 +35,9 @@ class App extends Component {
     console.log(played);
     if (played >= 1) {
       this.setState({ videoIsDone: true });
+      console.log('done!');
+      console.log('(App) selectedQuestion: ' + this.state.selectedQuestion);
+      console.log('(App) videoIsDone: ' + this.state.videoIsDone);
     }
   }
 
@@ -53,6 +56,7 @@ class App extends Component {
   }
   render() {
     //TODO display scroller for video :)
+    //TODO CH vid"https://youtu.be/4qBFSk7tMDw"
     return (
       <div className="app">
         <Header />
@@ -71,7 +75,7 @@ class App extends Component {
         </div>
         <EndingForm
           videoIsDone={this.state.videoIsDone}
-          selectedQuestion={this.selectedQuestion}
+          endQuestion={this.state.selectedQuestion}
         />
       </div>
     );

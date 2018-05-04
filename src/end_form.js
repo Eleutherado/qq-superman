@@ -11,7 +11,11 @@ export default class EndingForm extends Component {
     //In both cases display a card saying thank you (perhaps bootstrap modals. )
   }
   render() {
-    if (this.props.selectedQuestion != null && this.props.videoIsDone) {
+    console.log('end_form called');
+    console.log('  qs:' + this.props.endQuestion);
+    console.log('  isDone:' + this.props.videoIsDone);
+    console.log();
+    if (this.props.endQuestion != null && this.props.videoIsDone) {
       //and video has stopped playing
       return (
         <div className="end_form container">

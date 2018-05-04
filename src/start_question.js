@@ -52,7 +52,7 @@ export default class StartQuestionForm extends Component {
             <label>
               Pick a question you want this video to answer today:
               <select
-                class="form-control"
+                className="form-control"
                 value={this.state.dropdownValue}
                 onChange={change => {
                   console.log('event: ' + change.target.value);
