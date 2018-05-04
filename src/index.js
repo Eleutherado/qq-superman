@@ -68,7 +68,6 @@ class App extends Component {
         <div className="embed-responsive player_container">
           <ReactPlayer
             url="https://youtu.be/4qBFSk7tMDw"
-            url="https://www.youtube.com/watch?v=UKpGsS1W36w"
             playing={this.state.playing}
             onPlay={this.onPlay}
             onPause={this.onPause}
