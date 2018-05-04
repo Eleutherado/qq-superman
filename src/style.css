@@ -1,0 +1,21 @@
+.player_container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.start_form {
+  position: absolute;
+  width: 60%;
+  margin-left: 20%;
+  z-index: 1;
+  background-color: white;
+  border-radius: 3%;
+  border: 3px solid;
+  border-color: #432b68;
+  padding: 4px;
+}
+
+.head_title {
+  text-align: center;
+  font-size: 42px;
+}

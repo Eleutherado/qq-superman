@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import ReactPlayer from 'react-player';
 
+import Header from './header';
+import EndingForm from './end_form';
+import SelectQuestion from './start_question';
+import './style.css';
+
 const styles = {
   fontFamily: 'sans-serif',
   textAlign: 'center'
@@ -12,7 +17,15 @@ class App extends Component {
     super();
     this.state = {
       playing: false,
-      seenFirstPause: false
+      votedQuestions: [
+        '1. What is the mechanism process after pressing the toilet handle?',
+        '2. is the direction of the water in the toilet bowl influenced by Coriolis effect?',
+        '3. What happens after water comes out from the tank?',
+        '4. What influences the spiral direction of the water in the toilet bowl?',
+        '5. What is Siphon effect?'
+      ],
+      selectedQuestion: null,
+      videoIsDone: false
     };
 
     this.onProgress = this.onProgress.bind(this);
@@ -23,9 +36,9 @@ class App extends Component {
   onProgress(state) {
     const { playedSeconds, played, loadedSeconds, loaded } = state;
     console.log(this.state.playing);
-    if (playedSeconds >= 6 && !this.state.seenFirstPause) {
-      this.setState({ playing: false, seenFirstPause: true });
-      console.log('paused!');
+    console.log(played);
+    if (played >= 1) {
+      this.setState({ videoIsDone: true });
     }
   }
 
@@ -37,14 +50,26 @@ class App extends Component {
     this.setState({ playing: false });
   }
   render() {
+    //TODO display scroller for video :)
     return (
-      <div style={styles}>
-        <ReactPlayer
-          url="https://www.youtube.com/watch?v=Rm83Q9UhJvw"
-          playing={this.state.playing}
-          onPlay={this.onPlay}
-          onPause={this.onPause}
-          onProgress={this.onProgress}
+      <div className="app">
+        <Header />
+        <SelectQuestion
+          onSubmit={this.handleStartSubmit}
+          questions={this.state.votedQuestions}
+        />
+        <div className="player_container">
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=Rm83Q9UhJvw"
+            playing={this.state.playing}
+            onPlay={this.onPlay}
+            onPause={this.onPause}
+            onProgress={this.onProgress}
+          />
+        </div>
+        <EndingForm
+          videoIsDone={this.state.videoIsDone}
+          selectedQuestion={this.selectedQuestion}
         />
       </div>
     );
