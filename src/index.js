@@ -7,11 +7,6 @@ import EndingForm from './end_form';
 import SelectQuestion from './start_question';
 import './style.css';
 
-const styles = {
-  fontFamily: 'sans-serif',
-  textAlign: 'center'
-};
-
 class App extends Component {
   constructor() {
     super();
