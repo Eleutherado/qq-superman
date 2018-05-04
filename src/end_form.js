@@ -21,7 +21,7 @@ export default class EndingForm extends Component {
         <div className="end_form container">
           <form>
             <div class="row">
-              <h3>{this.props.endQuestion}</h3>
+              <h3>Qs: {this.props.endQuestion}</h3>
             </div>
             <div class="form-group">
               This video answered this question:
