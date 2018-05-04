@@ -21,7 +21,7 @@ export default class EndingForm extends Component {
         <div className="end_form container">
           <form>
             <div class="row">
-              <h3>{this.props.selectedQuestion}</h3>
+              <h3>{this.props.endQuestion}</h3>
             </div>
             <div class="form-group">
               This video answered this question:
@@ -33,7 +33,9 @@ export default class EndingForm extends Component {
               </button>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Example textarea</label>
+              <label for="exampleFormControlTextarea1">
+                In your own words, try to answer the question above
+              </label>
               <textarea
                 class="form-control"
                 id="exampleFormControlTextarea1"
