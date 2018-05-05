@@ -46,41 +46,39 @@ export default class StartQuestionForm extends Component {
       return <div />;
     }
     return (
-      <div className="start_form containter">
-        <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label>
-              Pick a question you want this video to answer today:
-              <select
-                className="form-control"
-                value={this.state.dropdownValue}
-                onChange={change => {
-                  console.log('event: ' + change.target.value);
-                  this.setState({ dropdownValue: change.target.value });
-                  console.log('dropdown updated:' + this.state.dropdownValue);
-                }}
-              >
-                {questionOptions}
-              </select>
-            </label>
-            <label>
-              <strong>Or</strong> add a new question of your own:
-              <input
-                className="form-control"
-                type="text"
-                placeholder="Default input"
-                value={this.state.addQsText}
-                onChange={change => {
-                  this.setState({ addQsText: change.target.value });
-                }}
-              />
-            </label>
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </form>
-      </div>
+      <form className="start_form containter" onSubmit={this.handleSubmit}>
+        <div className="form-group">
+          <label>
+            Pick a question you want this video to answer today:
+            <select
+              className="form-control"
+              value={this.state.dropdownValue}
+              onChange={change => {
+                console.log('event: ' + change.target.value);
+                this.setState({ dropdownValue: change.target.value });
+                console.log('dropdown updated:' + this.state.dropdownValue);
+              }}
+            >
+              {questionOptions}
+            </select>
+          </label>
+          <label>
+            <strong>Or</strong> add a new question of your own:
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Default input"
+              value={this.state.addQsText}
+              onChange={change => {
+                this.setState({ addQsText: change.target.value });
+              }}
+            />
+          </label>
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
     );
   }
 }
