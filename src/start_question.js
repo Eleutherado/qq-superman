@@ -31,7 +31,7 @@ export default class StartQuestionForm extends Component {
       chosenQs = this.state.addQsText;
     }
     console.log('selected question: ' + this.state.selectedQuestion);
-    alert('you chose "' + chosenQs); // update to display on left side of video.
+    alert('you chose "' + chosenQs + '"'); // update to display on left side of video.
     this.props.onFormSubmit(chosenQs);
     this.setState({ submitted: true });
   }

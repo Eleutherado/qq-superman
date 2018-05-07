@@ -49,7 +49,7 @@ export default class EndingForm extends Component {
     } else {
       return (
         <p style={{ textAlign: 'center', marginTop: '10px' }}>
-          Watch until the end for a quiz
+          Watch until the end for self-evaluation
         </p>
       );
     }
