@@ -53,6 +53,7 @@ class App extends Component {
     this.setState({ selectedQuestion });
     console.log('(App) selectedQuestion: ' + selectedQuestion);
     console.log('(App) state.selectedQuestion: ' + this.state.selectedQuestion);
+    this.setState({ playing: true });
   }
   render() {
     //TODO display scroller for video :)

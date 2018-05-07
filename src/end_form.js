@@ -47,7 +47,11 @@ export default class EndingForm extends Component {
         </div>
       );
     } else {
-      return <div />;
+      return (
+        <p style={{ textAlign: 'center', marginTop: '10px' }}>
+          Watch until the end for a quiz
+        </p>
+      );
     }
   }
 }
